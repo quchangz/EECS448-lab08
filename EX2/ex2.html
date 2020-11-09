@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>SlidesShow</title>
+    </head>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        #picBox
+        {
+            margin:100px auto;
+            width:1366px;
+            height:768px;
+        }
+        #pic
+        {
+            width:1366px;
+            height:768px;
+    
+        }
+        #buttonBox
+        {
+            width:150px;
+            margin:10px auto;
+        }
+    </style>
+
+    <body>
+        <p style="text-align:center;font-size:30px">SlidesShow</p>
+        <div id="picBox">
+        <img src="p1.jpg" id="pic">
+        <div id="buttonBox">
+            <input type="button" value="Previous" onclick="pre();">
+            <input type="button" value="Next" onclick="next();">
+        </div>
+        </div>
+        <script>
+            var Arr=new Array("p1.jpg","p2.jpg","p3.jpg","p4.jpg","p5.jpg");
+            var index=0;
+            function next()
+            {
+                index++;
+                if(index==Arr.length)
+                {
+                    index=0;
+                }
+                document.getElementById("pic").src=Arr[index];
+            }
+            function pre()
+            {
+                index--;
+                if(index<0)
+                {
+                    index=Arr.length-1;
+                }
+                document.getElementById("pic").src=Arr[index];
+            }
+        </script>
+    </body>
+</html>

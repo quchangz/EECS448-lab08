@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+    <title>Validate Password</title> 
+    <script type="text/javascript"> 
+        function test_password() { 
+            var res; 
+            var p1 = document.getElementById("t1").value; 
+            var p2 = document.getElementById("t2").value; 
+            if (p1.length < 8) 
+                res = "the passwords are not at least 8 characters long"; 
+            else if (p1 != p2)
+                res = "the passwords entered don't match"; 
+            else
+                res = "Pass";
+
+            document.getElementById("t3").value = res; 
+  
+        } 
+    </script> 
+</head> 
+  
+<body> 
+
+    <p style="text-align:center;font-size:30px">Validate Password</p>
+    <p> 
+        New Password: 
+        <input  type="text" placeholder="ex.12345678"id="t1" /> 
+        <br/> 
+        <br/> 
+        Enter again:
+        <input  type="text"placeholder="ex.12345678"id="t2" />
+        <br/> 
+        <br/> 
+        <input  type="button"value="Check" onclick="test_password()" /> 
+        <br/> 
+        <br/> Result: 
+        <input  type="text" id="t3"readonly/> 
+    </p> 
+</body> 
+  
+</html> 
